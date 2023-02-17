@@ -19,5 +19,5 @@ commands:
     usage: /<command>
   sudo:
     description: Makes a player say something
-    usage: /<command> <message>
+    usage: /<command> <player> <message>
 
