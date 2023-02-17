@@ -6,14 +6,14 @@
 
     <groupId>io.github.odevven</groupId>
     <artifactId>LearningPlugin</artifactId>
-    <version>0.0.2</version>
+    <version>0.0.3</version>
     <packaging>jar</packaging>
 
     <name>LearningPlugin</name>
 
     <description>This has everything coded of my learning experience. This plugin is made for V1.19.3</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version> <!--1.8 or 17: java 9 they stopped putting the 1.-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <url>odevven.github.io</url>

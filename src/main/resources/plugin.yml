@@ -5,3 +5,16 @@ api-version: 1.19
 authors: [ DevvEn ]
 description: This has everything coded of my learning experience. This plugin is made for V1.19.3
 website: odevven.github.io
+commands:
+  god:
+    description: Makes you invincible (unable to die)
+    usage: /<command>
+    aliases:
+      - godmode
+  feed:
+    description: Feeds you to max hunger
+    usage: /<command>
+  heal:
+    description: Heals you to max health
+    usage: /<command>
+
