@@ -11,10 +11,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class LearningPlugin extends JavaPlugin {
+    public static LearningPlugin plugin;
 
     @Override
     public void onEnable() { //Plugin startup logic
         System.out.println("[LearningPlugin] Plugin starting!");
+        plugin = this;
 
         //Registers all of the events (listeners)
         getServer().getPluginManager().registerEvents(new BedListener(), this);
@@ -33,5 +35,10 @@ public final class LearningPlugin extends JavaPlugin {
     public void onDisable() { //Plugin shutdown logic
         System.out.println("[LearningPlugin] Plugin stopping.");
 
+    }
+
+
+    public static LearningPlugin getPlugin() {
+        return plugin;
     }
 }
