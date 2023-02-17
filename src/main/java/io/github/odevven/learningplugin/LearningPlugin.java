@@ -3,6 +3,7 @@ package io.github.odevven.learningplugin;
 import io.github.odevven.learningplugin.commands.FeedCommand;
 import io.github.odevven.learningplugin.commands.GodModeCommand;
 import io.github.odevven.learningplugin.commands.HealCommand;
+import io.github.odevven.learningplugin.commands.SudoCommand;
 import io.github.odevven.learningplugin.listeners.BedListener;
 import io.github.odevven.learningplugin.listeners.JoinLeaveListeners;
 import org.bukkit.command.Command;
@@ -24,6 +25,7 @@ public final class LearningPlugin extends JavaPlugin {
         getCommand("god").setExecutor(new GodModeCommand());
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("heal").setExecutor(new HealCommand());
+        getCommand("sudo").setExecutor(new SudoCommand());
         System.out.println("[LearningPlugin] All of the commands have been registered.");
     }
 

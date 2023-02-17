@@ -17,4 +17,7 @@ commands:
   heal:
     description: Heals you to max health
     usage: /<command>
+  sudo:
+    description: Makes a player say something
+    usage: /<command> <message>
 
