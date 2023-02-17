@@ -1,0 +1,7 @@
+name: LearningPlugin
+version: '${project.version}'
+main: io.github.odevven.learningplugin.LearningPlugin
+api-version: 1.19
+authors: [ DevvEn ]
+description: This has everything coded of my learning experience. This plugin is made for V1.19.3
+website: odevven.github.io
