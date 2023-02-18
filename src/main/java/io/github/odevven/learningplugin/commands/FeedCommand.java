@@ -10,18 +10,21 @@ public class FeedCommand implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player p) {
-            if (p.hasPermission("learningplugin.feed")) {
-                p.setFoodLevel(20);
-                p.sendMessage(ChatColor.GREEN + "You now have maximum hunger.");
-            }
-            else {
-                sender.sendMessage(ChatColor.RED + "You do not have permission to run this command!");
-            }
-        }
-        else {
+        if (!(sender instanceof Player)) {
             sender.sendMessage(ChatColor.RED + "/feed can only be executed by a player!");
+            return true;
         }
+        if (!sender.hasPermission("learningplugin.feed")) {
+            sender.sendMessage(ChatColor.RED + "You do not have permission to run this command!");
+            return true;
+        }
+
+
+        Player p = (Player) sender;
+
+        p.setFoodLevel(20);
+        p.sendMessage(ChatColor.GREEN + "You now have maximum hunger.");
+
 
         return true;
     }

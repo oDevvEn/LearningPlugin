@@ -20,4 +20,10 @@ commands:
   sudo:
     description: Makes a player say something
     usage: /<command> <player> <message>
+  setspawn:
+    description: Sets a spawn point to be used by /spawn
+    usage: /<command>
+  spawn:
+    description: Teleports player to set spawn
+    usage: /<command>
 

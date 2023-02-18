@@ -1,9 +1,6 @@
 package io.github.odevven.learningplugin;
 
-import io.github.odevven.learningplugin.commands.FeedCommand;
-import io.github.odevven.learningplugin.commands.GodModeCommand;
-import io.github.odevven.learningplugin.commands.HealCommand;
-import io.github.odevven.learningplugin.commands.SudoCommand;
+import io.github.odevven.learningplugin.commands.*;
 import io.github.odevven.learningplugin.listeners.BedListener;
 import io.github.odevven.learningplugin.listeners.JoinLeaveListeners;
 import org.bukkit.command.Command;
@@ -18,23 +15,30 @@ public final class LearningPlugin extends JavaPlugin {
         System.out.println("[LearningPlugin] Plugin starting!");
         plugin = this;
 
+        //Do something with config
+        getConfig().options().copyDefaults();
+        saveConfig();
+        System.out.println("[LearningPlugin] Loaded configurations");
+
         //Registers all of the events (listeners)
         getServer().getPluginManager().registerEvents(new BedListener(), this);
         getServer().getPluginManager().registerEvents(new JoinLeaveListeners(), this);
-        System.out.println("[LearningPlugin] All of the events have been registered.");
+        System.out.println("[LearningPlugin] All of the events have been registered");
 
-        //Registers all of the commands
+        //Registers all of the commands -- god i need to code some sort of command manager to stop this huge mess
         getCommand("god").setExecutor(new GodModeCommand());
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("sudo").setExecutor(new SudoCommand());
-        System.out.println("[LearningPlugin] All of the commands have been registered.");
+        getCommand("setspawn").setExecutor(new SpawnCommands());
+        getCommand("spawn").setExecutor(new SpawnCommands());
+        System.out.println("[LearningPlugin] All of the commands have been registered");
     }
 
     @Override
     public void onDisable() { //Plugin shutdown logic
-        System.out.println("[LearningPlugin] Plugin stopping.");
-
+        System.out.println("[LearningPlugin] Plugin stopping");
+        saveConfig();
     }
 
 
